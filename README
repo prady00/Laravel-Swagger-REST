@@ -1,0 +1,24 @@
+Installation :
+
+1. This program uses Laravel v4.2 framework
+2. Serve it using apache
+3. Your document root must be /public folder 
+
+
+Database Installation/Configuration :
+
+1. This program uses MySQL as persistent data storage system.
+2. A dump is in yumist.sql
+3. For configuring connection details edit /app/config/database.php
+
+
+Documentation for REST APIs :
+
+1. This program uses swagger for generating documentation.
+2. Please hit http://localhost/api-docs to get documentation on browser. (Assuming you install it at localhost)
+
+
+Testing the installation :
+
+1. Point to GET http://localhost/status you must see "Feeling yummy :)" as message
+

@@ -1,0 +1,181 @@
+{
+    "basePath": "/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0.0",
+    "resourcePath": "/orders",
+    "apis": [
+        {
+            "path": "/api/orders",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "add a order",
+                    "nickname": "post-orders",
+                    "type": "body",
+                    "parameters": [
+                        {
+                            "paramType": "body",
+                            "name": "body",
+                            "type": "Order",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "order object that needs to be added"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 201,
+                            "message": "Created"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "",
+                    "authorizations": {
+
+                    }
+                }
+            ]
+        },
+        {
+            "path": "/api/orders/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "details of a order",
+                    "nickname": "get-order",
+                    "type": "string",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "id of order"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Success"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "",
+                    "authorizations": {
+
+                    }
+                },
+                {
+                    "method": "PUT",
+                    "summary": "update a order",
+                    "nickname": "put-orders",
+                    "type": "string",
+                    "parameters": [
+                        {
+                            "paramType": "body",
+                            "name": "body",
+                            "type": "Order",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "order object that needs to be update"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "id of order"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Success"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "Send a PUT request along with required form parameters",
+                    "authorizations": {
+
+                    }
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "delete a order",
+                    "nickname": "delete-orders",
+                    "type": "string",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "id of order"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 202,
+                            "message": "Accepted"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "Send a DELETE request along with required parameters",
+                    "authorizations": {
+
+                    }
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Order": {
+            "id": "Order",
+            "properties": {
+                "user_id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "Item"
+                    }
+                }
+            }
+        },
+        "Item": {
+            "id": "Item",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "produces": [
+        "application/json"
+    ]
+}

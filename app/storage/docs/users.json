@@ -1,0 +1,175 @@
+{
+    "basePath": "/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0.0",
+    "resourcePath": "/users",
+    "apis": [
+        {
+            "path": "/api/users",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "add a user",
+                    "nickname": "post-users",
+                    "type": "body",
+                    "parameters": [
+                        {
+                            "paramType": "body",
+                            "name": "body",
+                            "type": "User",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "User object that needs to be added"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 201,
+                            "message": "Created"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "",
+                    "authorizations": {
+
+                    }
+                }
+            ]
+        },
+        {
+            "path": "/api/users/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "details of a user",
+                    "nickname": "get-user",
+                    "type": "string",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "id of user"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Success"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "",
+                    "authorizations": {
+
+                    }
+                },
+                {
+                    "method": "PUT",
+                    "summary": "update a user",
+                    "nickname": "put-users",
+                    "type": "string",
+                    "parameters": [
+                        {
+                            "paramType": "body",
+                            "name": "body",
+                            "type": "User",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "User object that needs to be update"
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "id of user"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Success"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "Send a PUT request along with required form parameters",
+                    "authorizations": {
+
+                    }
+                },
+                {
+                    "method": "DELETE",
+                    "summary": "delete a user",
+                    "nickname": "delete-users",
+                    "type": "string",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true,
+                            "allowMultiple": false,
+                            "description": "id of user"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 202,
+                            "message": "Accepted"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "Send a DELETE request along with required parameters",
+                    "authorizations": {
+
+                    }
+                }
+            ]
+        }
+    ],
+    "models": {
+        "User": {
+            "id": "User",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string",
+                    "defaultValue": "love"
+                },
+                "contact": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "produces": [
+        "application/json"
+    ]
+}

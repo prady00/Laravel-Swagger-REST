@@ -1,0 +1,36 @@
+{
+    "basePath": "/",
+    "swaggerVersion": "1.2",
+    "apiVersion": "1.0.0",
+    "resourcePath": "/items",
+    "apis": [
+        {
+            "path": "/api/items",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "list of items available",
+                    "nickname": "get-items",
+                    "type": "string",
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Success"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        }
+                    ],
+                    "notes": "",
+                    "authorizations": {
+
+                    }
+                }
+            ]
+        }
+    ],
+    "produces": [
+        "application/json"
+    ]
+}
